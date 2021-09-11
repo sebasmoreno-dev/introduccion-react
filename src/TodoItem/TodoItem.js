@@ -1,5 +1,8 @@
 import React from 'react';
 import './TodoItem.css';
+import { VscCheck } from "react-icons/vsc";
+import { VscChromeClose } from "react-icons/vsc";
+
 
 function TodoItem(props) {
   return (
@@ -8,7 +11,7 @@ function TodoItem(props) {
         className={`Icon Icon-check ${props.completed && 'Icon-check--active'}`}
         onClick={props.onComplete}
         >
-      √
+      <VscCheck />
       </span>
       <p className={`TodoItem-p ${props.completed && 'TodoItem-p--complete'}`}>
         {props.text}
@@ -17,7 +20,7 @@ function TodoItem(props) {
         className="Icon Icon-delete"
         onClick={props.onDelete}
         >
-        X
+        <VscChromeClose />
       </span>
     </li>
   );

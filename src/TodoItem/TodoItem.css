@@ -6,6 +6,12 @@
     align-items: center;
     margin-top: 24px;
     box-shadow: 0px 5px 50px rgba(32, 35, 41, 0.15);
+    border-radius: 4px;
+    /* cursor: pointer; */
+}
+.TodoItem:hover {
+    background-color: #00C1D4;
+    
 }
 
 .TodoItem-p {

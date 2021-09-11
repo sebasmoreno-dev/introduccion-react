@@ -23,7 +23,7 @@ React.useEffect(() => {
         } catch(error) {
         setError(error);
         }
-    }, 1200);
+    }, 2000);
 });
 
     const saveItem = (newItem) => {

@@ -7,9 +7,12 @@ import{ TodoItem } from '../TodoItem/TodoItem';
 import{ TodoForm } from '../TodoForm/form';
 import { CreateTodoButton } from '../CreateTodoButton/CreateTodoButton';
 import { Modal } from '../Modal/modal';
+import { TodosError } from '../TodosError/todosError';
+import { TodosLoading } from '../TodosLoading/todosLoading';
+import { EmptyTodos } from '../EmptyTodos/emptyTodos';
 
 
-function AppUI() {
+function AppUI() { //llamamos React Context
   const {//hacemos el llamado a todas las propiedades que necesitamos
     error,
     loading,
@@ -26,9 +29,9 @@ function AppUI() {
     <TodoSearch />
 
       <TodoList>
-        {error && <p>Desespérate, hubo un error</p>}
-        {loading && <p>Estamos cargando 🤗...</p>}
-        {(!loading && !searchedTodos.lenght) && <p>¡Crea tu primer TODO! 😁😁</p>}
+        {error && <TodosError error={error} />}
+        {loading &&  new Array(4).fill(1).map((a, i)=> <TodosLoading key={i} />) } {/* Esto nos permite cargar varios skeletons de TODOs */}
+        {(!loading && !searchedTodos.lenght) && <EmptyTodos />}
 
 
         {searchedTodos.map(todo => (
