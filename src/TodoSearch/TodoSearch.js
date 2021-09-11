@@ -3,7 +3,7 @@ import { TodoContext } from '../TodoContext';
 import './TodoSearch.css';
 
 
-function TodoSearch() {
+function TodoSearch() { //las variables son llamadas usando useContext importando el contexto TodoContext
     const { searchValue, setSearchValue } = React.useContext(TodoContext);
 
     const onSearchValueChange = (event) => {
